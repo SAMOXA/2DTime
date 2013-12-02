@@ -8,6 +8,7 @@
 #include "grid.h"
 #include "field.h"
 #include "graphicscell.h"
+#include "customview.h"
 
 namespace Ui {
 class Interface;
@@ -27,8 +28,8 @@ public:
 
 private:
     Ui::Interface* ui;
-    QGraphicsView* gameField;
-    QGraphicsView* timeTree;
+    CustomView* gameField;
+    CustomView* timeTree;
     QGraphicsScene gameFieldScene;
     QGraphicsScene timeTreeScene;
     GraphicsCell*** m_field;

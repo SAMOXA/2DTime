@@ -5,7 +5,7 @@ GameController::GameController(QObject *parent) :
 {
 }
 
-void GameController::updateField(Field& oldField)
+void GameController::updateField(Field* oldField)
 {
 
 }

@@ -5,9 +5,6 @@ Grid::Grid(const QColor& _color, int sizeX, int sizeY,
            unsigned int countX, unsigned int countY)
     : cellSizeX(sizeX), cellSizeY(sizeY), cellCountX(countX), cellCountY(countY), color(_color)
 {
-    //setZValue((cellSizeX + cellSizeY) % 2);
-    //setFlags(ItemIsSelectable | ItemIsMovable);
-    setAcceptHoverEvents(true);
 }
 
 QRectF Grid::boundingRect() const
@@ -41,21 +38,3 @@ void Grid::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWid
         painter->drawLine(p1, p2);
     }
 }
-
-//void Grid::mousePressEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    QGraphicsItem::mousePressEvent(event);
-//    update();
-//}
-
-//void Grid::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    QGraphicsItem::mouseMoveEvent(event);
-//    update();
-//}
-
-//void Grid::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    QGraphicsItem::mouseReleaseEvent(event);
-//    update();
-//}

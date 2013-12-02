@@ -15,8 +15,14 @@ Interface::Interface(unsigned int _cellSizeX, unsigned int _cellSizeY,
     file.open(QFile::ReadOnly);
     QWidget *formWidget = loader.load(&file, this);
     file.close();
-    gameField = formWidget->findChild<QGraphicsView*>("gameField");
-    timeTree = formWidget->findChild<QGraphicsView*>("timeTree");
+    QVBoxLayout* firstLayer = formWidget->findChild<QVBoxLayout*>("FirstLayer");
+    timeTree = new CustomView;
+
+    firstLayer->addWidget(timeTree);
+    QVBoxLayout* gameFieldLayout = firstLayer->findChild<QVBoxLayout*>("gameFieldLayout");
+    gameField = new CustomView;
+    gameFieldLayout->addWidget(gameField);
+
     ui->setupUi(formWidget);
     QGraphicsItem *item = new Grid(QColor(Qt::red), cellSizeX, cellSizeY, cellCountX, cellCountY);
     item->setPos(QPointF(0, 0));
@@ -26,7 +32,7 @@ Interface::Interface(unsigned int _cellSizeX, unsigned int _cellSizeY,
         m_field[i] = new GraphicsCell*[cellCountY];
         for(unsigned int j=0;j<cellCountY;++j){
             m_field[i][j] = new GraphicsCell((i+j)%2==0);
-            m_field[i][j]->setPos(i*GraphicsCell::getCellSizeX()+i+1, j*GraphicsCell::getCellSizeY()+j+1);
+            m_field[i][j]->setPos(i*GraphicsCell::getCellSizeX()+i+0.5, j*GraphicsCell::getCellSizeY()+j+0.5);
             gameFieldScene.addItem(m_field[i][j]);
         }
     }

@@ -1,6 +1,6 @@
 #include "fieldcell.h"
 
-void FieldCell::update(Field& field)
+void FieldCell::update(Field* field)
 {
 
 }

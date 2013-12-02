@@ -7,13 +7,11 @@ unsigned int GraphicsCell::cellSizeY = 10;
 GraphicsCell::GraphicsCell()
 {
     setFlags(ItemIsSelectable);
-    setAcceptHoverEvents(true);
 }
 
 GraphicsCell::GraphicsCell(bool state):FieldCell(state)
 {
     setFlags(ItemIsSelectable);
-    setAcceptHoverEvents(true);
 }
 
 QRectF GraphicsCell::boundingRect() const
@@ -52,18 +50,6 @@ unsigned int GraphicsCell::getCellSizeY()
     return GraphicsCell::cellSizeY;
 }
 
-//void GraphicsCell::mousePressEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    QGraphicsItem::mousePressEvent(event);
-//    QGraphicsItem::update();
-//}
-
-//void GraphicsCell::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    QGraphicsItem::mouseMoveEvent(event);
-//    QGraphicsItem::update();
-//}
-
 void GraphicsCell::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
     Q_UNUSED(event);
@@ -72,11 +58,5 @@ void GraphicsCell::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
     }else{
         born();
     }
-//    QGraphicsItem::mouseReleaseEvent(event);
     QGraphicsItem::update();
 }
-
-//GraphicsCell*GraphicsCell::createClone()
-//{
-
-//}

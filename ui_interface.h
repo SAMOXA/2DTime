@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
@@ -30,10 +29,8 @@ public:
     QWidget *widget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *FirstLayer;
-    QGraphicsView *timeTree;
     QHBoxLayout *SecondLayer;
-    QVBoxLayout *verticalLayout_2;
-    QGraphicsView *gameField;
+    QVBoxLayout *gameFieldLayout;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton_3;
@@ -73,34 +70,14 @@ public:
         FirstLayer->setObjectName(QStringLiteral("FirstLayer"));
         FirstLayer->setSizeConstraint(QLayout::SetDefaultConstraint);
         FirstLayer->setContentsMargins(0, 0, 0, 0);
-        timeTree = new QGraphicsView(verticalLayoutWidget);
-        timeTree->setObjectName(QStringLiteral("timeTree"));
-        timeTree->setEnabled(true);
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(timeTree->sizePolicy().hasHeightForWidth());
-        timeTree->setSizePolicy(sizePolicy1);
-        timeTree->setMinimumSize(QSize(0, 50));
-        timeTree->setMaximumSize(QSize(16777215, 50));
-
-        FirstLayer->addWidget(timeTree);
-
         SecondLayer = new QHBoxLayout();
         SecondLayer->setSpacing(6);
         SecondLayer->setObjectName(QStringLiteral("SecondLayer"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        gameField = new QGraphicsView(verticalLayoutWidget);
-        gameField->setObjectName(QStringLiteral("gameField"));
-        sizePolicy.setHeightForWidth(gameField->sizePolicy().hasHeightForWidth());
-        gameField->setSizePolicy(sizePolicy);
+        gameFieldLayout = new QVBoxLayout();
+        gameFieldLayout->setSpacing(6);
+        gameFieldLayout->setObjectName(QStringLiteral("gameFieldLayout"));
 
-        verticalLayout_2->addWidget(gameField);
-
-
-        SecondLayer->addLayout(verticalLayout_2);
+        SecondLayer->addLayout(gameFieldLayout);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);

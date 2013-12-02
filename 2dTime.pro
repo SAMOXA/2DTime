@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     field.cpp \
     TimeController/timecontroller.cpp \
     Graphics/grid.cpp \
-    Graphics/graphicscell.cpp
+    Graphics/graphicscell.cpp \
+    Graphics/customview.cpp
 
 HEADERS  += Graphics/interface.h \
     eventcontroller.h \
@@ -36,7 +37,8 @@ HEADERS  += Graphics/interface.h \
     field.h \
     TimeController/timecontroller.h \
     Graphics/grid.h \
-    Graphics/graphicscell.h
+    Graphics/graphicscell.h \
+    Graphics/customview.h
 
 FORMS    += Graphics/interface.ui \
     Graphics/mainwindow.ui
